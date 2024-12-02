@@ -345,6 +345,7 @@
 		justify-content: center;
 		transition: background-color 0.3s ease;
 		width: 3rem;
+
 	}
 
 	.action-button:hover {
@@ -360,7 +361,7 @@
 		gap: 1rem;
 		position: fixed;
 		right: 3rem;
-		top: 85px;
+		top: 93px;
 		z-index: 10;
 	}
 
@@ -387,8 +388,8 @@
 	.cards-container {
 		align-items: center;
 		display: flex;
-		flex-wrap: wrap;
 		gap: 2rem;
+		flex-wrap: wrap;
 		justify-content: center;
 
 	}
@@ -507,6 +508,7 @@
 		overflow-x: hidden;
 		overflow-y: auto;
 		padding: 2rem;
+		padding-block-start: 0;
 	}
 
 	.tree-section {

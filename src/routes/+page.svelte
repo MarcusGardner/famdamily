@@ -12,7 +12,7 @@
 </script>
 
 <div class="home-layout">
-	<div class="column-1" in:fly={{ x: -50, duration: 1000 }}>
+	<div class="column-1" in:fade={{ duration: 1000 }}>
 		<AppBrand />
 	</div>
 	<div class="column-2">
@@ -41,12 +41,16 @@
 						<h3>Connect Family</h3>
 						<p>Bring your family together in one beautiful, shared space</p>
 					</div>
+
+					<div class="feature clear" in:fly={{ y: 50, duration: 1000, delay: 800 }}>
+						<a href="/tree" class="cta-button" in:fade={{ delay: 800 }}>
+							Start Your Journey
+							<i class="fas fa-arrow-right"></i>
+						</a>
+					</div>
 				</div>
 
-				<a href="/tree" class="cta-button" in:fade={{ delay: 800 }}>
-					Start Your Journey
-					<i class="fas fa-arrow-right"></i>
-				</a>
+
 			</div>
 		{/if}
 	</div>
@@ -111,6 +115,13 @@
 		backdrop-filter: blur(10px);
 		transition: transform 0.3s ease;
 	}
+	.clear {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		clear: both;
+		background: transparent;
+	}	
 
 	.feature:hover {
 		transform: translateY(-5px);
@@ -139,6 +150,7 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
+		max-height: 2rem;
 		background: #ffd700;
 		color: #2b5b77;
 		padding: 1rem 2rem;

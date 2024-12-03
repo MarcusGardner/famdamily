@@ -18,7 +18,7 @@
 				</button>
 			{/if}
 			<div class="name">
-				<button class="blue" aria-label="expand/collaspe" on:click={() => (expanded = !expanded)}>
+				<button class="blue" >
 					<h3>{person.first_name} {person.last_name}</h3>
 				</button>
 			</div>
@@ -32,6 +32,13 @@
 					<i class="fas fa-pencil-alt"></i>
 				</button>
 			{/if}
+			<button class="blue" aria-label="expand/collaspe" on:click={() => (expanded = !expanded)}>
+				{#if expanded}
+					<i class="fas fa-chevron-up blue"></i>
+				{:else}
+					<i class="fas fa-chevron-down blue"></i>
+				{/if}
+			</button>
 		</div>
 	</div>
 {/if}
@@ -69,6 +76,9 @@
 {/if}
 
 <style>
+	.blue {
+		color: #004f7cbe;
+	}
 	.person-header {
 		background: rgb(234, 243, 255);
 		border-radius: 0.5rem;
@@ -133,6 +143,10 @@
 		color: #ff0000;
 		text-shadow: 1px 1px 1px #363636;
 	}
+	.blue:hover {
+		color: #1f1f1f;
+		text-shadow: none;
+	}
 	h3:hover {
 		font-size: 1.3rem;
 		font-weight: 600;
@@ -189,5 +203,6 @@
 	.fas.fa-pencil-alt:hover {
 		color: #181818;
 		font-size: 1.3rem;
+		text-shadow: none;
 	}
 </style>

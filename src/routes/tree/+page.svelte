@@ -189,7 +189,7 @@
 			<section class="tree-section selected-section">
 				<h2 class="section-title">
 					{#if $selectedPerson}
-						<i class="fas fa-circle-user"></i>&nbsp;Selected Person & Siblings
+						<i class="fas fa-circle-user big"></i>&nbsp;Selected Person &Siblings&nbsp;<i class="fas fa-user-group"></i>
 					{:else}
 						No Person Selected
 					{/if}
@@ -233,8 +233,8 @@
 		{:else}
 			<div class="empty-state">
 				<div class="empty-state-content">
-					<h1>Why are you here?</h1>
-					<div class="advice">
+					<h1>Why's there no tree showing?</h1>
+					<div class="advice" in:fly={{ y: 50, duration: 1000 }}>
 						<div class="text">
 							<h2>You're brand new here.</h2>
 							<p>Use the Add button to add your first new person.</p>
@@ -247,12 +247,10 @@
 							<i class="fas fa-plus"></i>
 						</button>
 					</div>
-					<div class="advice">
+					<div class="advice" in:fly={{ y: 50, duration: 1000, delay: 200 }}>
 						<div class="text">
 							<h2>No actively selected person.</h2>
 							<p>Use the Search button to find a person to view.</p>
-							<p>You can also use the Add/Edit button to add a new person.</p>
-							<p>If you go to the home page, all the current data is reloaded.</p>
 						</div>
 						<button
 							class="action-button search-button"
@@ -262,10 +260,10 @@
 							<i class='fas fa-magnifying-glass'></i>
 						</button>
 					</div>
-					<div class="advice">
+					<div class="advice" in:fly={{ y: 50, duration: 1000, delay: 400 }}>
 						<div class="text">
 							<h2>Something's gone awry.</h2>
-							<p>Try visiting the <a href="/">Home page</a> then returning here.</p>
+							<p>Try visiting the <a href="/">Home page</a>.  It reloads all existing data</p>
 						</div>
 						<button
 							class="action-button home-button"
@@ -282,7 +280,7 @@
 		<!-- Partners & Children Section -->
 		{#if partners.length > 0}
 			<section class="tree-section">
-				<h2 class="section-title"><i class="fas fa-heart med-red"></i>&nbsp;Relationships</h2>
+				<h2 class="section-title"><i class="fas fa-heart "></i>&nbsp;Relationships</h2>
 				<div class="partners-container">
 
 					{#each partners as { otherPartnerPerson, childrenWithPersonData }}
@@ -361,7 +359,7 @@
 		gap: 1rem;
 		position: fixed;
 		right: 3rem;
-		top: 93px;
+		top: 90px;
 		z-index: 10;
 	}
 
@@ -380,7 +378,9 @@
 	.advice .text {
 		flex: 1;
 	}
-
+	.big {
+		font-size: 2rem;
+	}
 	.big-red {
 		color: red;
 		font-size: 2.5rem;
@@ -410,6 +410,7 @@
 		flex-direction: column;
 		gap: 2rem;
 		padding: 3rem;
+		margin-block-start: 2rem;
 	}
 
 	.empty-state-content {
@@ -420,14 +421,14 @@
 	h1 {
 		color: #2b5b77;
 		font-size: 2rem;
-		margin-bottom: 1rem;
+		margin-bottom: 2rem;
 	}
 
 	h2 {
 		color: #2b5b77;
 		font-size: 1.5rem;
-		padding-block-end: 1rem;
-		margin-block-end: 1rem;
+		padding-block-end: .5rem;
+		margin-block-end: .5rem;
 	}
 
 	.loader {
@@ -436,10 +437,7 @@
 		height: 50vh;
 		justify-content: center;
 	}
-	.med-red {
-		color: red;
-		font-size: 1.5rem;
-	}	
+
 	p {
 		color: #2b5b77;
 		font-size: 1rem;
@@ -474,13 +472,16 @@
 	}
 
 	.section-title {
+		display: flex;
+		align-items: center;
+		justify-content: center;	
 		width: 100%;
 		text-align: center;
-		color: rgb(27, 93, 138);
+		color: rgb(230, 230, 230);
 		font-size: 1.5rem;
-		font-weight: bold;
-		background-color: rgba(255, 255, 255, 0.9);
-		border-block-end: 1px solid #79c5fc;
+		font-weight: medium;
+		background-color: rgba(51, 51, 51, 0.9);
+		border-block-end: 1px solid #252525;
 		padding-block-start: 1rem;
 		border-top-left-radius: 1rem;
 		border-top-right-radius: 1rem;
@@ -508,16 +509,16 @@
 		overflow-x: hidden;
 		overflow-y: auto;
 		padding: 2rem;
-		padding-block-start: 0;
+		padding-block: 0;
 	}
 
 	.tree-section {
 		border-radius: 1rem;
-		border: 1px solid #73ccff;
+		border: 1px solid #585858;
 		background-color: rgb(247, 247, 247);
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 		margin: 1.5rem 0;
-		padding-block-end: 1rem;
+		padding-block-end: 1.5rem;
 
 	}
 </style>

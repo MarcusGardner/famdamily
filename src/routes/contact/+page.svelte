@@ -5,11 +5,11 @@
 </script>
 
 <div class="home-layout">
-	<div class="column-1" in:fly={{ x: -50, duration: 1000 }}>
+	<div class="column-1" in:fade={{ duration: 1000 }}>
 		<AppBrand />
 	</div>
 	<div class="column-2">
-		<div class="content" in:fly={{ y: 50, duration: 1000 }}>
+		<div class="content" in:fade={{duration: 1000 }}>
 			<h1>Let's Connect</h1>
 			<p class="tagline">I'd love to hear from you</p>
 

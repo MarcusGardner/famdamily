@@ -71,7 +71,7 @@
 	{#if showMenu}
 		<div class="popup-menu">
 			<a href="/" 
-			   class="menu-item {$page.url.pathname === '/' ? 'active' : 'a-small'}"
+			   class="menu-item {$page.url.pathname === '/' ? 'active mobile' : 'a-small'}"
 			   on:click={closeMenu}>
 				<i class="fas fa-home"></i>
 				Home
@@ -79,7 +79,7 @@
 
 			{#if $isAuthenticated}
 				<a href="/tree"
-				   class="menu-item {$page.url.pathname === '/tree' ? ' active' : 'a-small'}"
+				   class="menu-item {$page.url.pathname === '/tree' ? ' active mobile' : 'a-small'}"
 				   on:click={closeMenu}>
 					<i class="fas fa-tree"></i>
 					Tree
@@ -87,13 +87,13 @@
 			{/if}
 
 			<a href="/about"
-			   class="menu-item {$page.url.pathname === '/about' ? 'active' : 'a-small'}"
+			   class="menu-item {$page.url.pathname === '/about' ? 'active mobile' : 'a-small'}"
 			   on:click={closeMenu}>
 				<i class="fas fa-info-circle"></i>
 				About
 			</a>
 			<a href="/contact"
-			   class="menu-item {$page.url.pathname === '/contact' ? 'active' : 'a-small'}"
+			   class="menu-item {$page.url.pathname === '/contact' ? 'active mobile' : 'a-small'}"
 			   on:click={closeMenu}>
 				<i class="fas fa-envelope"></i>
 				Contact
@@ -101,14 +101,14 @@
 
 			{#if $isAuthenticated}
 				<a href="/" 
-				   class="menu-item {$page.url.pathname === '/logout' ? 'active' : 'a-small'}"
+				   class="menu-item {$page.url.pathname === '/logout' ? 'active mobile' : 'a-small'}"
 				   on:click|preventDefault={handleLogout}>
 					<i class="fas fa-sign-out-alt"></i>
 					Logout
 				</a>
 			{:else}
 				<a href="/login" 
-				   class="menu-item {$page.url.pathname === '/login' ? 'active' : 'a-small'}"
+				   class="menu-item {$page.url.pathname === '/login' ? 'active mobile' : 'a-small'}"
 				   on:click={closeMenu}>
 					<i class="fas fa-sign-in-alt"></i>
 					Login
@@ -153,6 +153,7 @@
 	}
 	.menu a:hover {
 		background-color: #ffee00b7;
+		border-radius: .5rem;
 	}
 
 	.menu-item {
@@ -177,8 +178,13 @@
 	.active {
 		background-color: #ff7b00;
 		border: none;
-		border-radius: 0;
+		border-radius: .5rem;
 		box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+	}
+	.active.mobile {
+		width: 80%;
+		background-color: #ff7b00;
+		border-radius: 16rem;
 	}
 
 	.a-small {

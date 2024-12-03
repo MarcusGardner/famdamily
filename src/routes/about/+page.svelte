@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { isLoading, loadPeopleFromDb } from '$lib/stores/personStore';
 	import AppBrand from '$lib/components/AppBrand.svelte';
-	import { fly } from 'svelte/transition';
+	import { fly, fade } from 'svelte/transition';
 
 	onMount(async () => {
 		isLoading.set(true);
@@ -15,7 +15,7 @@
 	<div class="spinner">Loading...</div>
 {:else}
 	<div class="home-layout">
-		<div class="column-1" in:fly={{ x: -50, duration: 1000 }}>
+		<div class="column-1" in:fade={{ duration: 1000 }}>
 			<AppBrand />
 		</div>
 		<div class="column-2">
@@ -34,7 +34,7 @@
 
 				<div class="card" in:fly={{ y: 50, duration: 1000, delay: 600 }}>
 					<i class="fas fa-code-branch icon"></i>
-					<p>While I'm a professional developer, this is a labor of love created in my spare time. It may have quirks, but it's continuously evolving!</p>
+					<p>While I'm a professional developer, this is a labour of love created in my spare time. It may well have some quirks, but it's continuously evolving!</p>
 				</div>
 				
 				<div class="card" in:fly={{ y: 50, duration: 1000, delay: 800 }}>

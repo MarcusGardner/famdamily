@@ -82,7 +82,7 @@
 	.person-header {
 		background: rgb(234, 243, 255);
 		border-radius: 0.5rem;
-		width: 260px;
+		width: 290px;
 		border:none;
 		border: 1px solid #27a9f5;
 	}

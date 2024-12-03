@@ -19,7 +19,7 @@
 			<AppBrand />
 		</div>
 		<div class="column-2">
-			<div class="content-wrapper" in:fly={{ y: 50, duration: 1000 }}>
+			<div class="content-wrapper" in:fly={{ y: 50, duration: 2000 }}>
 				<h1>About The Tree of Life</h1>
 				
 				<div class="card" in:fly={{ y: 50, duration: 1000, delay: 200 }}>
